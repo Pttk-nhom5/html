@@ -9,7 +9,7 @@
   <meta name="author" content="" />
   <title>Dashboard - Bedenema Admin</title>
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-  <link href="../../css/styles.css" rel="stylesheet" />
+  <link href="../css/styles.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
     crossorigin="anonymous"></script>
 </head>
@@ -51,7 +51,7 @@
         <div class="sb-sidenav-menu">
           <div class="nav">
             <div class="sb-sidenav-menu-heading">Trang chủ</div>
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="../index.html">
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Trang chủ
             </a>
@@ -65,8 +65,8 @@
             <div class="collapse" id="collapseLayoutsMovie" aria-labelledby="headingOne"
               data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="../movie/showing_turn.html">Số ca chiếu</a>
-                <a class="nav-link" href="../movie/customer_one_turn.html">TB Khách / 1 ca</a>
+                <a class="nav-link" href="../statistics/movie/showing_turn.html">Số ca chiếu</a>
+                <a class="nav-link" href="../statistics/movie/customer_one_turn.html">TB Khách / 1 ca</a>
               </nav>
             </div>
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsCustomer"
@@ -78,8 +78,8 @@
             <div class="collapse" id="collapseLayoutsCustomer" aria-labelledby="headingOne"
               data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="../customer/brought_tickets.html">Lần đặt vé</a>
-                <a class="nav-link" href="../customer/members.html">Thành viên</a>
+                <a class="nav-link" href="../statistics/customer/brought_tickets.html">Lần đặt vé</a>
+                <a class="nav-link" href="../statistics/customer/members.html">Thành viên</a>
               </nav>
             </div>
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsIncome"
@@ -91,8 +91,8 @@
             <div class="collapse" id="collapseLayoutsIncome" aria-labelledby="headingOne"
               data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="../income/by_customer.html">Theo khách hàng</a>
-                <a class="nav-link" href="../income/by_movie.html">Theo phim</a>
+                <a class="nav-link" href="../statistics/income/by_customer.html">Theo khách hàng</a>
+                <a class="nav-link" href="../statistics/income/by_movie.html">Theo phim</a>
               </nav>
             </div>
             <div class="sb-sidenav-menu-heading">Phim & phòng chiếu</div>
@@ -126,43 +126,32 @@
     </div>
     <div id="layoutSidenav_content">
       <div class="container-fluid px-4">
-        <h1 class="mt-4">Thống kê phim theo trung bình khách / ca chiếu</h1>
+        <h1 class="mt-4">Danh sách phim của rạp</h1>
         <ol class="breadcrumb mb-4">
-          <li class="breadcrumb-item active">Thống kê phim theo trung bình khách / ca chiếu</li>
+          <li class="breadcrumb-item active">Danh sách phim của rạp</li>
         </ol>
-        <form>
-          <div class="row">
-            <div class="col">
-              <div class="mb-3">
-                <label for="startDateInput" class="form-label">Từ ngày</label>
-                <input type="date" class="form-control" id="startDateInput" placeholder="name@example.com">
-              </div>
-            </div>
-            <div class="col">
-              <div class="mb-3">
-                <label for="endDateInput" class="form-label">Đến ngày</label>
-                <input type="date" class="form-control" id="endDateInput" placeholder="name@example.com">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-primary">Thống kê</button>
-            </div>
-          </div>
-        </form>
         <div class="card mb-4 mt-4">
           <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            Bảng thống kê phim theo trung bình khách / ca chiếu
+            <div class="row">
+              <div class="col">
+                <i class="fas fa-table me-1"></i>
+                Bảng Danh sách phim của rạp
+              </div>
+              <div class="col d-flex justify-content-end">
+                <a href="./create_update.html">
+                  <button class="btn btn-primary mr-auto">Thêm mới</button>
+                </a>
+              </div>
+            </div>
+
           </div>
           <div class="card-body">
             <div class="row mb-4">
               <div class="col-lg-2 col">
                 <select class="form-select" aria-label="Default select example">
                   <option selected>Sắp xếp</option>
-                  <option value="1">Tăng dần</option>
-                  <option value="2">Giản dần</option>
+                  <option value="1">Ngày tạo tăng dần</option>
+                  <option value="2">Ngày tạo giảm dần</option>
                 </select>
               </div>
             </div>
@@ -174,7 +163,8 @@
                   <th>Đạo diễn</th>
                   <th>Đất nước</th>
                   <th>Thẻ loại</th>
-                  <th>TB khách / ca</th>
+                  <th>Ngày công chiếu</th>
+                  <th>Hành động</th>
                 </tr>
               </thead>
               <tfoot>
@@ -184,7 +174,8 @@
                   <th>Đạo diễn</th>
                   <th>Đất nước</th>
                   <th>Thẻ loại</th>
-                  <th>TB khách / ca</th>
+                  <th>Ngày công chiếu</th>
+                  <th>Hành động</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -194,7 +185,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -202,7 +197,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -210,7 +209,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -218,7 +221,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -226,7 +233,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -234,7 +245,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -242,7 +257,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -250,7 +269,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -258,7 +281,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -266,7 +293,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -274,7 +305,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -282,7 +317,11 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Bàn tay diệt quỷ</td>
@@ -290,8 +329,26 @@
                   <td>Kim Joo Hwan</td>
                   <td>Hàn quốc</td>
                   <td>Hành Động, Kinh Dị</td>
-                  <td>5</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
                 </tr>
+                <tr>
+                  <td>Bàn tay diệt quỷ</td>
+                  <td>128 phút</td>
+                  <td>Kim Joo Hwan</td>
+                  <td>Hàn quốc</td>
+                  <td>Hành Động, Kinh Dị</td>
+                  <td>12/09/2021</td>
+                  <td>
+                    <a href="./create_update.html"><button class="btn btn-primary">Cập nhật</button></a>
+                    <button class="btn btn-danger">Xóa</button>
+                  </td>
+                </tr>
+
+
               </tbody>
             </table>
           </div>
@@ -313,12 +370,12 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
-  <script src="../../js/scripts.js"></script>
+  <script src="../js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-  <script src="../../assets/demo/chart-area-demo.js"></script>
-  <script src="../../assets/demo/chart-bar-demo.js"></script>
+  <script src="../assets/demo/chart-area-demo.js"></script>
+  <script src="../assets/demo/chart-bar-demo.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-  <script src="../../js/datatables-simple-demo.js"></script>
+  <script src="../js/datatables-simple-demo.js"></script>
 </body>
 
 </html>
