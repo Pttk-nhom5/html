@@ -3,6 +3,7 @@
     width: 300px;
     background-color: #523e02;
     margin: 30px;
+
 }
 .seat{
     background-color: #444451;
@@ -49,3 +50,4 @@
 .seatrow:nth-last-of-type(2) {
     margin-left: 20px;
 }
+
