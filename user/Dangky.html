@@ -19,29 +19,34 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!">BEDENEMA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand" href="index.html">BEDENEMA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Products</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="list_film.html">Phim</a></li>
+                <li class="nav-item"><a class="nav-link" href="LichChieu.html">Đặt Vé</a></li>
+                <li class="nav-item"><a class="nav-link" href="Dangky.html">Đăng ký thẻ thành viên</a></li>
+
+                <!--          <li class="nav-item dropdown">-->
+                <!--            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"-->
+                <!--              aria-expanded="false">Shop</a>-->
+                <!--            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+                <!--              <li><a class="dropdown-item" href="#!">All Products</a></li>-->
+                <!--              <li>-->
+                <!--                <hr class="dropdown-divider" />-->
+                <!--              </li>-->
+                <!--              <li><a class="dropdown-item" href="#!">Popular Items</a></li>-->
+                <!--              <li><a class="dropdown-item" href="#!">New Arrivals</a></li>-->
+                <!--            </ul>-->
+                <!--          </li>-->
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            <a href="../admin/login.html">
+                <button class="btn btn-outline-dark" type="submit" >
+                    Đăng Nhập
                 </button>
-            </form>
+            </a>
         </div>
     </div>
 </nav>
@@ -60,21 +65,11 @@
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">3</span>
-            <input type="text" class="form-control" placeholder="Tên Đăng Nhập" aria-label="Tên Đăng Nhập" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Ngày sinh" aria-label="Ngày sinh" aria-describedby="basic-addon1">
         </div>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label">Password</label>
-
-            </div>
-            <div class="col-auto">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-    <span id="passwordHelpInline" class="form-text">
-      Dài từ 8-20 Ký tự .
-    </span>
-            </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">4</span>
+            <input type="text" class="form-control" placeholder="Số CMT/CCCD" aria-label="Số CMT/CCCD" aria-describedby="basic-addon1">
         </div>
 
         <div class="form-check form-check-inline">
@@ -97,16 +92,7 @@
             <label for="exampleFormControlTextarea1" class="form-label">Địa chỉ</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Rạp Ưa Thích</label>
-            <select class="form-select" id="inputGroupSelect01">
-                <option selected>Rạp Phim</option>
-                <option value="1">Rạp 1</option>
-                <option value="2">Rạp 2</option>
-                <option value="3">Rạp 3</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Tiếp Theo</button>
+        <button type="submit" class="btn btn-primary">Đăng ký</button>
 
 
         <!--End new Content-->
