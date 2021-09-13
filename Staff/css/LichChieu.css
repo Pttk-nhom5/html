@@ -1,0 +1,59 @@
+ul.view-date li.current{
+    border: 2px solid #222;
+    border-radius: 5px;
+}
+ul.view-date li:hover{
+    border: 2px solid #222;
+    border-radius: 5px;
+}
+.day{
+    border: 2px solid #fdfcf0;
+    border-radius: 5px;
+    color: #717171;
+    cursor: pointer;
+    height: 48px;
+    position: relative;
+    width: 77px;
+}
+
+.day>span{
+    color: #717171;
+    font-size: 11px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+}
+.day>em{
+    color: #717171;
+    font-size: 11px;
+    font-style: normal;
+    left: 4px;
+    position: absolute;
+    top: 20px;
+}
+.day>strong{
+    color: #717171;
+    font-size: 32px;
+    font-weight: normal;
+    left: 31px;
+    line-height: 32px;
+    position: absolute;
+    top: 8px;
+}
+ul.view-date li{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.nav-view-date{
+    border-bottom: 2px solid #000000;
+    border-top: 2px solid #000000;
+}
+
+
+.tenphim{
+    margin: 10px;
+}
