@@ -143,7 +143,19 @@
     </div>
     </section>
     <div class="container px-4 px-lg-5">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/OuIxS_LlnQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <script>
+            function ShowAndHide() {
+                var x = document.getElementById("SectionName");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+        <button onclick="ShowAndHide()" type="button" class="btn btn-outline-danger"><b> <i class="bi bi-chevron-double-right"></i>  Chi tiết | Trailer</b></button>
+        <div ID="SectionName" STYLE="display:none"><iframe width="560" height="315" src="https://www.youtube.com/embed/OuIxS_LlnQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
     <section class="py-2">
         <div class="container px-4 px-lg-5">
