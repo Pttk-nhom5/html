@@ -93,15 +93,58 @@
             <div class="col">
                 <a href="../user/lichChieu.html">
                     <div class="gap-3 col-4 mx-auto">
-                        <button class="btn btn-danger btn-lg" type="submit">
-                            <b><i class="bi bi-basket"></i> MUA VÉ</b>
-                        </button>
+                        <style>
+                            .button {
+                                display: inline-block;
+                                border-radius: 4px;
+                                background-color: hsl(0, 100%, 50%);
+                                border: none;
+                                color: #FFFFFF;
+                                text-align: center;
+                                font-size: 28px;
+                                padding: 20px;
+                                width: 220px;
+                                transition: all 0.5s;
+                                cursor: pointer;
+                                margin: 5px;
+                            }
+
+                            .button span {
+                                cursor: pointer;
+                                display: inline-block;
+                                position: relative;
+                                transition: 0.5s;
+                            }
+
+                            .button span:after {
+                                content: '\00bb';
+                                position: absolute;
+                                opacity: 0;
+                                top: 0;
+                                right: -20px;
+                                transition: 0.5s;
+                            }
+
+                            .button:hover span {
+                                padding-right: 25px;
+                            }
+
+                            .button:hover span:after {
+                                opacity: 1;
+                                right: 0;
+                            }
+                        </style>
+                        <button class="button" style="vertical-align:middle"><span><b><i class="bi bi-basket"></i> MUA VÉ</b> </span></button>
+
                     </div>
                 </a>
             </div>
         </div>
     </div>
     </section>
+    <div class="container px-4 px-lg-5">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OuIxS_LlnQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <section class="py-2">
         <div class="container px-4 px-lg-5">
             <p>
